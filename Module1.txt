@@ -1,0 +1,183 @@
+Sub srednie()
+R_loop
+R_1
+R_2
+End Sub
+
+
+Sub R_loop()
+
+Worksheets(2).Activate
+Dim liczba_srednich As Long
+liczba_srednich = Range("U2").Value
+Dim liczba_pomiarow As Long
+liczba_pomiarow = Range("T2").Value
+Dim pom As Long
+pom = 0
+Dim sum As Long
+sum = 0
+Dim licznik As Long
+Dim licznik2 As Long
+Dim data_mierzona As Date
+Dim data_1 As Date
+Dim data_2 As Date
+Dim srednia As Double
+Dim a As Long
+
+
+For licznik = 2 To liczba_srednich
+        data_1 = Range("G" & licznik)
+        a = licznik + 1
+        data_2 = Range("G" & a)
+
+    For licznik2 = 2 To liczba_pomiarow
+        data_mierzona = Range("B" & licznik2)
+        
+        If data_mierzona < data_1 Then
+            sum = sum
+                
+        ElseIf data_mierzona <= data_2 Then
+            sum = sum + Range("D" & licznik2).Value
+            pom = pom + 1
+            
+        End If
+        
+        
+    Next licznik2
+    
+    Range("H" & licznik).Value = pom
+    If pom > 0 Then
+    srednia = sum / pom
+    ElseIf pom = 0 Then
+    sredna = 0
+    End If
+    Range("I" & licznik).Value = srednia
+    sum = 0
+    pom = 0
+    licznik2 = 2
+
+
+Next licznik
+
+
+
+End Sub
+
+Sub R_1()
+
+Worksheets(2).Activate
+Dim liczba_srednich As Long
+liczba_srednich = Range("U2").Value
+Dim liczba_pomiarow As Long
+liczba_pomiarow = Range("T2").Value
+Dim pom As Long
+pom = 0
+Dim sum As Double
+sum = 0
+Dim licznik As Long
+Dim licznik2 As Long
+Dim data_mierzona As Date
+Dim data_1 As Date
+Dim data_2 As Date
+Dim srednia As Double
+Dim a As Long
+
+
+For licznik = 2 To liczba_srednich
+        data_1 = Range("G" & licznik)
+        a = licznik + 1
+        data_2 = Range("G" & a)
+
+    For licznik2 = 2 To liczba_pomiarow
+        data_mierzona = Range("B" & licznik2)
+        
+        If data_mierzona < data_1 Then
+            sum = sum
+                
+        ElseIf data_mierzona <= data_2 Then
+            sum = sum + Range("E" & licznik2).Value
+            pom = pom + 1
+            
+        End If
+        
+        
+    Next licznik2
+    
+    Range("K" & licznik).Value = pom
+    If pom > 0 Then
+    srednia = sum / pom
+    ElseIf pom = 0 Then
+    sredna = 0
+    End If
+    Range("J" & licznik).Value = srednia
+    sum = 0
+    pom = 0
+    licznik2 = 2
+
+
+Next licznik
+
+
+
+End Sub
+
+
+Sub R_2()
+
+Worksheets(2).Activate
+Dim liczba_srednich As Long
+liczba_srednich = Range("U2").Value
+Dim liczba_pomiarow As Long
+liczba_pomiarow = Range("T2").Value
+Dim pom As Long
+pom = 0
+Dim sum As Double
+sum = 0
+Dim licznik As Long
+Dim licznik2 As Long
+Dim data_mierzona As Date
+Dim data_1 As Date
+Dim data_2 As Date
+Dim srednia As Double
+Dim a As Long
+
+
+For licznik = 2 To liczba_srednich
+        data_1 = Range("G" & licznik)
+        a = licznik + 1
+        data_2 = Range("G" & a)
+
+    For licznik2 = 2 To liczba_pomiarow
+        data_mierzona = Range("B" & licznik2)
+        
+        If data_mierzona < data_1 Then
+            sum = sum
+                
+        ElseIf data_mierzona <= data_2 Then
+            sum = sum + Range("F" & licznik2).Value
+            pom = pom + 1
+            
+        End If
+        
+        
+    Next licznik2
+    
+    Range("M" & licznik).Value = pom
+    If pom > 0 Then
+    srednia = sum / pom
+    ElseIf pom = 0 Then
+    sredna = 0
+    End If
+    Range("L" & licznik).Value = srednia
+    sum = 0
+    pom = 0
+    licznik2 = 2
+
+
+Next licznik
+
+
+
+End Sub
+
+

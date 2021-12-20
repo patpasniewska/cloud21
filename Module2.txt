@@ -1,0 +1,71 @@
+Sub daty()
+
+Worksheets(2).Activate
+Dim dzien As Date
+dzien = "01/12/2021 00:00:01"
+Dim licznik As Integer
+licznik = 2
+
+Do While dzien < "19/12/2021 12:00:01"
+
+Range("G" & licznik) = dzien
+dzien = dzien + 1 / 24
+licznik = licznik + 1
+
+Loop
+
+End Sub
+
+
+Sub los_rez()
+
+Worksheets(2).Activate
+
+Dim czas As Date
+Dim R1 As Long
+Dim Rloop As Long
+Dim R2 As Long
+
+
+czas = Now
+
+Dim liczba_pomiarow As Long
+liczba_pomiarow = Range("T2").Value + 1
+
+Rloop = ((1400 - 1200 + 1) * Rnd + 1200)
+R1 = ((150000000 - 10000 + 1) * Rnd + 10000)
+R2 = ((150000000 - 10000 + 1) * Rnd + 10000)
+
+Range("B" & liczba_pomiarow) = czas
+Range("D" & liczba_pomiarow) = Rloop
+Range("E" & liczba_pomiarow) = R1
+Range("F" & liczba_pomiarow) = R2
+
+
+End Sub
+
+Sub Los_pogoda()
+
+Dim czas As Date
+Dim Tzas As Long
+Dim Tempow As Long
+Dim temzew As Long
+
+czas = Now
+Dim liczba_srednich As Long
+liczba_srednich = Range("U2").Value
+
+
+Tzas = ((90 - 70 + 1) * Rnd + 70)
+Tpow = ((50 - 40 + 1) * Rnd + 40)
+Tzew = ((10 - 0 + 1) * Rnd + 0)
+
+Range("G" & liczba_srednich) = czas
+Range("G" & liczba_srednich + 1) = czas + 1 / 24
+Range("N" & liczba_srednich) = Tzas
+Range("O" & liczba_srednich) = Tpow
+Range("P" & liczba_srednich) = Tzew
+
+
+
+End Sub
